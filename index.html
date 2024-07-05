@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="refresh">
+        <meta name="description" content="This website provides access to tools for gathering and viewing
+        telemetry data received by the Illinois State University Solar Car.">
+        <meta name="viewport" content="width=device-width", initial-scale=1>
+        <title>Temp</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <h2 class="logo">Illinois State University Solar Car Telemetry Data</h2>
+            <nav class="navbar">
+                <button class="loginBtn-popup">Login</button>
+            </nav>
+        </header>
+
+        <div class="wrapper">
+            <div class="form-box login">
+                <h2>Login</h2>
+                <form action="#">
+                    <span class="close-icon">
+                        <ion-icon name="close"></ion-icon>
+                    </span>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="mail"></ion-icon>
+                        </span>
+                        <input id="userEmail" type="email" required>
+                        <label>Email</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="eye" class="toggle-visible" onclick="toggleVisible()"></ion-icon>
+                            <ion-icon name="lock-closed"></ion-icon>
+                        </span>
+                        <input id="userPassword" type="password" required>
+                        <label>Password</label>
+                    </div>
+
+                    <div class="remember-password">
+                        <!-- Remember me check box is here for future implementation with cookies -->
+                        <!-- <label><input type="checkbox"> Remember Me</label> -->
+                        <a href="#">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn" onclick="getUserInput()">Login</button>
+                </form>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>
