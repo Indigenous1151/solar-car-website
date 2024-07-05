@@ -10,7 +10,7 @@
 }
 
 body {
-    background:#787878 url('Images/solar_car_racing.jpg') no-repeat;   
+    background:#787878 url('Images/solar_car_racing.webp') no-repeat;   
     background-size: cover; 
     display: flex;
     justify-content: center;
