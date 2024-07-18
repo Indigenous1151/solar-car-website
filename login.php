@@ -34,11 +34,11 @@
                     header("Location: ./main.html");
                     exit;
                 } else {
-                    header("Location: ./index?status=invalid");
+                    header("Location: ./index.html?status=invalid");
                     exit;
                 }
             } else {
-                header("Location: ./index?status=invalid");
+                header("Location: ./index.html?status=invalid");
                 exit;
             }
         }
