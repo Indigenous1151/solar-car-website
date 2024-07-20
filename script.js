@@ -6,6 +6,10 @@ const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
 const notifyIncorrect = document.querySelector('.notify-incorrect');
 
+
+//---------------------------------------------------------//
+//               Login Page Functionality                  //
+//---------------------------------------------------------//
 loginBtn.addEventListener('click', ()=>{
     if (wrapper.classList.contains('active-popup')) {
         document.getElementById("userEmail").value="";
@@ -16,6 +20,10 @@ loginBtn.addEventListener('click', ()=>{
 
         if (wrapper.classList.contains('active')) {
             wrapper.classList.remove('active');
+
+            if (notifyIncorrect.classList.contains('show-message')) {
+                notifyIncorrect.classList.remove('show-message');
+            }
         }
     }
     else {
@@ -30,6 +38,10 @@ closeBtn.addEventListener('click', ()=>{
     document.getElementById("userPassword").value="";
     document.getElementById("email").value="";
     document.getElementById("password").value="";
+
+    if (notifyIncorrect.classList.contains('show-message')) {
+        notifyIncorrect.classList.remove('show-message');
+    }
 });
 
 registerLink.addEventListener('click', ()=>{
@@ -46,14 +58,40 @@ loginLink.addEventListener('click', ()=>{
 
 
 function toggleVisible() {
-    let userPassword = document.getElementById("userPassword");
+    const userLoginPassword = document.getElementById("userPassword");
+    const userRegisterPassword = document.getElementById("password");
 
-    if (userPassword.type === "password") {
-        userPassword.type="text";
+    if (userLoginPassword.type === "password") {
+        userLoginPassword.type="text";
         eyeIcon.tagName="eye-off";
     }
     else {
-        userPassword.type="password";
+        userLoginPassword.type="password";
         eyeIcon.tagName="eye";
+    }
+
+    if (userRegisterPassword.type === "password") {
+        userRegisterPassword.type="text";
+
+    }
+    else {
+        userRegisterPassword.type="password";
+    }
+}
+
+
+//-------------------------------------------------//
+//               String Query Script               //
+//-------------------------------------------------//
+
+const url = window.location.href;
+const searchParams = new URL(url).searchParams;
+const entries = new URLSearchParams(searchParams).entries();
+const entryArray = Array.from(entries);
+
+if (entryArray[0][0] === "status") {
+    if (entryArray[0][1] === "invalid") {
+        wrapper.classList.add('active-popup'); // open the login window
+        notifyIncorrect.classList.add('show-message'); // show the user or password invalid message
     }
 }
