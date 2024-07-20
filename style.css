@@ -281,12 +281,15 @@ header {
 }
 
 .notify-incorrect {
-    color: transparent;
+    color: rgb(122, 0, 0);
+    font-size: 0;
+    font-weight: bold;
+    padding-top: 5px;
     margin-bottom: 15px;
 }
 
-.notify-incorrect:active {
-    color: red;
+.notify-incorrect.show-message {
+    font-size: 1em;
 }
 
 @media screen and (max-width: 800px) {
